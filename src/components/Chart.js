@@ -14,11 +14,18 @@ class Chart extends Component {
     historyData: "day",
     resultLimit: 10,
     aggregate: 1,
-    currentValue: 0
+    currentValue: 0,
+    high: 0,
+    low: 0
   };
 
   componentDidMount() {
     this.getData();
+    // Eventually get live data by the 2nd
+    // setInterval(() => {
+    //   this.getData();
+    //   console.log('hello')
+    // }, 60000)
   }
 
   componentDidUpdate = (prevProps, prevState) => {
@@ -73,7 +80,7 @@ class Chart extends Component {
       )
       .then(res => {
         const cryptos = res.data;
-        console.log(cryptos);
+        // console.log(cryptos);
         this.setState({
           currentValue: cryptos.Data[0].close ? cryptos.Data[0].close : 0,
           chartData: {
@@ -95,7 +102,10 @@ class Chart extends Component {
                 pointBackgroundColor: "#fff"
               }
             ]
-          }
+          },
+          high: cryptos.Data[0].high,
+          low: cryptos.Data[0].low
+
         });
         // console.log(this.state.chartData);
       })
@@ -137,6 +147,8 @@ class Chart extends Component {
           onSelectLimit={this.handleSelectLimit}
         />
         <CurrentValue1
+        high={this.state.high}
+        low={this.state.low}
           currentValue={this.state.currentValue}
           currentTitle={this.state.title}
           currentCurrency={this.state.currentCurrency}
@@ -145,6 +157,7 @@ class Chart extends Component {
 
         <div>
           <Line
+            margin={"0 auto"}
             data={this.state.chartData}
             width={1000}
             height={400}

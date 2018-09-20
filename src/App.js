@@ -36,7 +36,9 @@ class App extends Component {
     return (
       <div style={styles} className="App">
         <Nav />
-        <Chart />
+        <div>
+          <Chart />
+        </div>
       </div>
     );
   }

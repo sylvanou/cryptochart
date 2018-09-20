@@ -3,8 +3,9 @@ import React from "react";
 // import { Panel, Grid, Row, Col } from "react-bootstrap";
 
 export const CurrentValue1 = props => {
-  let { currentTitle, currentCurrency, currentValue } = props;
-  // console.log(currentCrypto, currentTitle, currentCurrency);
+  let { currentTitle, currentCurrency, currentValue, high, low } = props;
+  // console.log(currentValue, currentTitle, currentCurrency);
+  // console.log(props);
   // let currentValue = 0;
 
   const style = {
@@ -30,18 +31,18 @@ export const CurrentValue1 = props => {
   return (
     <div style={style}>
       <span style={style2}>
-        {currentValue}
-        <p style={style3}>{currentTitle}</p>
+        {high}
+        <p style={style3}>High</p>
       </span>
 
       <span style={style4}>
         {currentValue}
-        <p style={style3}>{currentTitle}</p>
+        <p style={style3}>Current</p>
       </span>
 
       <span style={style2}>
-        {currentValue}
-        <p style={style3}>{currentTitle}</p>
+        {low}
+        <p style={style3}>Low</p>
       </span>
 
       <hr />

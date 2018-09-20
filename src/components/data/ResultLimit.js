@@ -2,7 +2,7 @@ import React from "react";
 import { ButtonGroup, DropdownButton, MenuItem } from "react-bootstrap";
 
 export const ResultLimit = props => {
-  const limit = 1000;
+  const limit = 100;
   var styles = {
     color: "red",
     fontWeight: "bold",
