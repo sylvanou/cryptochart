@@ -1,0 +1,4 @@
+.current-value-container {
+  display: flex;
+  justify-content: space-around;
+  color: steelblue; }

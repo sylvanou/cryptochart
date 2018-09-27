@@ -1,8 +1,8 @@
 import React from "react";
-import { Currencies } from "../data/Currencies";
-import { Cryptos } from "../data/Cryptos";
-import { ResultLimit } from "../data/ResultLimit";
-import { History } from "../data/History";
+import { Currencies } from "../Currencies/Currencies";
+import { Cryptos } from "../Cryptos/Cryptos";
+import { ResultLimit } from "../ResultLimit";
+import { History } from "../History";
 
 export const Header = props => {
   const style = {

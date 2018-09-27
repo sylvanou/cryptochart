@@ -12,6 +12,10 @@
 # production
 /build
 
+# Ignore docs files
+styles/.sass-cache
+styles/.sass-cache/*
+
 # misc
 .DS_Store
 .env.local

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 import axios from "axios";
-import { timeConverter } from "./timeConverter";
-import { Header } from "./layout/Header";
-import { CurrentValue1 } from "./data/CurrentValue1";
+import { timeConverter } from "../timeConverter";
+import { Header } from "../layout/Header";
+import { CurrentValue } from "../CurrentValue/CurrentValue";
+import "./Chart.css";
 
 class Chart extends Component {
   state = {
@@ -105,7 +106,6 @@ class Chart extends Component {
           },
           high: cryptos.Data[0].high,
           low: cryptos.Data[0].low
-
         });
         // console.log(this.state.chartData);
       })
@@ -120,46 +120,36 @@ class Chart extends Component {
   static defaultProps = {
     displayTitle: true,
     displayLegend: true,
-    legendPosition: "right",
+    legendPosition: "bottom",
     crypto: "Bitcoin"
   };
 
   render() {
     // const data = this.state.chartData;
     // console.log(this.props);
-
-    const styles = {
-      backgroundColor: "white",
-      width: "50%",
-      height: "100",
-      borderRadius: "0.5em",
-      margin: "40px auto",
-      boxShadow: "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)"
-    };
+    console.log(Chart.defaultProps)
 
     // console.log(this.state.title);
     return (
-      <div style={styles} className="chart">
+      <div className="chart">
         <Header
           onSelectIso={this.handleSelectIso}
           onSelectCrypto={this.handleSelectCrypto}
           onSelectHistory={this.handleSelectHistory}
           onSelectLimit={this.handleSelectLimit}
         />
-        <CurrentValue1
-        high={this.state.high}
-        low={this.state.low}
+        <CurrentValue
+          high={this.state.high}
+          low={this.state.low}
           currentValue={this.state.currentValue}
           currentTitle={this.state.title}
           currentCurrency={this.state.currentCurrency}
           currentCrypto={this.state.currentCrypto}
         />
 
-        <div>
+        <div style={{ width: "90%", margin: "0 auto" }}>
           <Line
-            margin={"0 auto"}
             data={this.state.chartData}
-            width={1000}
             height={400}
             options={{
               maintainAspectRatio: false,

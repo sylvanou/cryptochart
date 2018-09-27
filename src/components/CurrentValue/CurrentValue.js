@@ -1,20 +1,15 @@
 import React from "react";
-// import axios from "axios";
-// import { Panel, Grid, Row, Col } from "react-bootstrap";
+import './CurrentValue.css'
 
-export const CurrentValue1 = props => {
+export const CurrentValue = props => {
   let { currentTitle, currentCurrency, currentValue, high, low } = props;
   // console.log(currentValue, currentTitle, currentCurrency);
   // console.log(props);
   // let currentValue = 0;
 
-  const style = {
-    display: "flex",
-    justifyContent: "space-around"
-  };
   const style2 = {
     flex: "1",
-    fontSize: "35px"
+    fontSize: "3rem"
   };
   const style3 = {
     fontSize: "20px",
@@ -25,11 +20,11 @@ export const CurrentValue1 = props => {
     height: "100px",
     borderRight: "1px solid rgb(218, 225, 233)",
     flex: "1",
-    fontSize: "35px"
+    fontSize: "3rem"
   };
 
   return (
-    <div style={style}>
+    <div className="current-value-container">
       <span style={style2}>
         {high}
         <p style={style3}>High</p>
