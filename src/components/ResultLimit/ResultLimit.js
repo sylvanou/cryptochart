@@ -2,14 +2,6 @@ import React from "react";
 import { ButtonGroup, DropdownButton, MenuItem } from "react-bootstrap";
 
 const limit = 100;
-var styles = {
-  color: "red",
-  fontWeight: "bold",
-  height: "300px",
-  width: "200px",
-  overflow: "auto"
-};
-// console.log(currencies)
 let numList = [];
 for (let i = 0; i <= limit; i++) {
   numList.push(i);
