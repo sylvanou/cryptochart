@@ -1,5 +1,6 @@
 import React from "react";
 import { ButtonGroup, DropdownButton, MenuItem } from "react-bootstrap";
+import "../templates/btn-container.css";
 
 const limit = 100;
 let numList = [];
@@ -8,7 +9,7 @@ for (let i = 0; i <= limit; i++) {
 }
 export const ResultLimit = props => (
   <DropdownButton id="bg-nested-dropdown" title="Limit Results" height={{}}>
-    <div style={styles} className="container">
+    <div className="container btn-container">
       <ButtonGroup bsSize="small">
         {numList.map(num => (
           <MenuItem
