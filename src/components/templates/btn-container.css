@@ -3,3 +3,8 @@
   height: 300px;
   width: 200px;
   overflow: auto; }
+
+.result-limit + ul, .result-limit + ul div {
+  width: 118px !important;
+  min-width: 118px !important;
+  overflow-x: hidden; }

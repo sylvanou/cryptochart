@@ -8,7 +8,12 @@ for (let i = 0; i <= limit; i++) {
   numList.push(i);
 }
 export const ResultLimit = props => (
-  <DropdownButton id="bg-nested-dropdown" title="Limit Results" height={{}}>
+  <DropdownButton
+    id="bg-nested-dropdown"
+    title="Limit Results"
+    height={{}}
+    className="result-limit"
+  >
     <div className="container btn-container">
       <ButtonGroup bsSize="small">
         {numList.map(num => (
