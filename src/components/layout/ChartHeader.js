@@ -4,7 +4,7 @@ import { Cryptos } from "../Cryptos/Cryptos";
 import { ResultLimit } from "../ResultLimit/ResultLimit";
 import { History } from "../History/History";
 
-export const Header = props => {
+export const ChartHeader = props => {
   const style = {
     textAlign: "center"
   };

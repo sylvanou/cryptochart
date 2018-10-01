@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 import axios from "axios";
 import { timeConverter } from "../timeConverter";
-import { Header } from "../layout/Header";
+import { ChartHeader } from "../layout/ChartHeader";
 import { CurrentValue } from "../CurrentValue/CurrentValue";
 import "./Chart.css";
 
@@ -132,7 +132,7 @@ class Chart extends Component {
     // console.log(this.state.title);
     return (
       <div className="chart">
-        <Header
+        <ChartHeader
           onSelectIso={this.handleSelectIso}
           onSelectCrypto={this.handleSelectCrypto}
           onSelectHistory={this.handleSelectHistory}
