@@ -16,6 +16,9 @@
 styles/.sass-cache
 styles/.sass-cache/*
 
+# newapikey
+/keys
+
 # misc
 .DS_Store
 .env.local
