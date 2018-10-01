@@ -20,6 +20,6 @@ export const timeConverter = UNIX_timestamp => {
   var hour = a.getHours();
   var min = a.getMinutes();
   var sec = a.getSeconds();
-  var time = `${month}/${date}/${year} ${hour}:${min}:${sec}`;
+  var time = `${month}/${date}/${year} ${hour}:${min}${sec}`;
   return time;
 };
