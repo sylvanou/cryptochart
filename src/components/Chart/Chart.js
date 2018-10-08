@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 import axios from "axios";
-import Aux from "../../hoc/Aux";
 import { timeConverter } from "../timeConverter";
 import { ChartHeader } from "./ChartHeader";
 import { CurrentValue } from "../CurrentValue/CurrentValue";
