@@ -1,6 +1,6 @@
 import React from "react";
 import { ButtonGroup, DropdownButton, MenuItem } from "react-bootstrap";
-import "../templates/btn-container.css";
+import "../../components/UI/Btn/btn-container.css";
 
 const limit = 100;
 let numList = [];

@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 import axios from "axios";
+import Aux from "../../hoc/Aux";
 import { timeConverter } from "../timeConverter";
-import { ChartHeader } from "../layout/ChartHeader";
+import { ChartHeader } from "./ChartHeader";
 import { CurrentValue } from "../CurrentValue/CurrentValue";
+import Loader from "../UI/Loader/Loader";
 import "./Chart.css";
 
 class Chart extends Component {
@@ -17,10 +19,12 @@ class Chart extends Component {
     aggregate: 1,
     currentValue: 0,
     high: 0,
-    low: 0
+    low: 0,
+    loading: false
   };
 
   componentDidMount() {
+    this.setState({ loading: true });
     this.getData();
     // Eventually get live data by the 2nd
     // setInterval(() => {
@@ -30,7 +34,6 @@ class Chart extends Component {
   }
 
   componentDidUpdate = (prevProps, prevState) => {
-    // console.log('Active Language', this.state.activeLanguage)
     if (prevState.historyData !== this.state.historyData) {
       this.getData();
     }
@@ -56,12 +59,14 @@ class Chart extends Component {
       currentCurrency: iso
     });
   };
+
   handleSelectCrypto = (crypto, name) => {
     this.setState({
       currentCrypto: crypto,
       title: name
     });
   };
+
   handleSelectLimit = limit => {
     this.setState({
       resultLimit: limit
@@ -105,7 +110,8 @@ class Chart extends Component {
             ]
           },
           high: cryptos.Data[0].high,
-          low: cryptos.Data[0].low
+          low: cryptos.Data[0].low,
+          loading: false
         });
         // console.log(this.state.chartData);
       })
@@ -125,13 +131,11 @@ class Chart extends Component {
   };
 
   render() {
-    // const data = this.state.chartData;
-    // console.log(this.props);
-    console.log(Chart.defaultProps)
-
-    // console.log(this.state.title);
+    if (!this.state.chartData) {
+      return <Loader />;
+    }
     return (
-      <div className="chart">
+      <div className="chart-container">
         <ChartHeader
           onSelectIso={this.handleSelectIso}
           onSelectCrypto={this.handleSelectCrypto}
@@ -147,7 +151,7 @@ class Chart extends Component {
           currentCrypto={this.state.currentCrypto}
         />
 
-        <div style={{ width: "90%", margin: "0 auto" }}>
+        <div className="line-chart" style={{ width: "90%", margin: "0 auto" }}>
           <Line
             data={this.state.chartData}
             height={400}

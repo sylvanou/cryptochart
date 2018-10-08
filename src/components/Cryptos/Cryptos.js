@@ -1,7 +1,7 @@
 import React from "react";
 import { cryptos, cryptoNames } from "../data/crypto";
 import { ButtonGroup, DropdownButton, MenuItem } from "react-bootstrap";
-import "../templates/btn-container.css";
+import "../../components/UI/Btn/btn-container.css";
 
 export const Cryptos = props => (
   <DropdownButton id="bg-nested-dropdown" title="Crypto Code" height={{}}>

@@ -1,20 +1,9 @@
 .App {
+  display: flex;
   text-align: center;
+  flex-direction: column;
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  width: 100%;
+  overflow: auto;
   background-image: linear-gradient(rgb(14, 56, 119), rgb(43, 113, 177));
-}
-
-.chart-container {
-  background-color: white;
-  width: 60%;
-  height: auto;
-  border-radius: 0.5em;
-  margin: 0 auto;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  @media only screen and (max-width: 500px) {
-    width: 100%;
-  }
 }

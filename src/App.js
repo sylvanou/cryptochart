@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Nav } from "../src/components/layout/Nav";
-import Chart from "./components/Chart/Chart";
+import CryptoTop from "../src/components/layout/CryptoTop/CryptoTop";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Nav />
-        <div className="chart-container">
-          <Chart />
-        </div>
+        <CryptoTop />
       </div>
     );
   }
