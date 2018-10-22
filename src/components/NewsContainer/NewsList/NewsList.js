@@ -13,7 +13,7 @@ const newsList = props => {
           <div className="news-header">
             <small className="news-published-date">Publish Date: {article.publishedAt.split('T')[0]}</small>
           <div className="news-title" key={articles[i]}>{article.title}</div>
-          <p>{article.content.split('[')[0]}</p>
+          <p className="news-content">{article.content.split('[')[0]}</p>
           </div>
         </a>
       ))}

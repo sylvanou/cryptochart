@@ -1,15 +1,20 @@
 import React, { Component } from "react";
-import "./App.css";
-import { Nav } from "../src/components/layout/Nav";
+import { Navigation } from "../src/components/layout/Navigation";
 import CryptoTop from "../src/components/layout/CryptoTop/CryptoTop";
+import Forum from "../src/components/Forum/Forum";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "./App.css";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Nav />
-        <CryptoTop />
-      </div>
+      <Router>
+        <div className="App">
+          <Navigation />
+          <Route path="/" exact component={CryptoTop} />
+          <Route path="/forum" exact component={Forum} />
+        </div>
+      </Router>
     );
   }
 }
