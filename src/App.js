@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navigation } from "../src/components/layout/Navigation";
+import { Navigation } from "../src/components/layout/Navigation/Navigation";
 import CryptoTop from "../src/components/layout/CryptoTop/CryptoTop";
 import Forum from "../src/components/Forum/Forum";
 import { BrowserRouter as Router, Route } from "react-router-dom";
