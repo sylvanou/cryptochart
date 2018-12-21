@@ -6,12 +6,12 @@ import "./Navigation.css";
 export const Navigation = () => (
   <Navbar inverse collapseOnSelect className="navigation">
     <Navbar.Header>
-      <Navbar.Brand pullLeft>
+      <Navbar.Brand>
         <Link to="/">HODLR</Link>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>
-    <Navbar.Collapse>
+    {/* <Navbar.Collapse>
       <Nav>
         <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
           <MenuItem eventKey={3.1}>
@@ -30,5 +30,6 @@ export const Navigation = () => (
         <NavItem href="#">Link Right</NavItem>
       </Nav>
     </Navbar.Collapse>
+    */}
   </Navbar>
 );

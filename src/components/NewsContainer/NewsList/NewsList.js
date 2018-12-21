@@ -4,7 +4,7 @@ import { Image } from "react-bootstrap";
 
 const newsList = props => {
   let articles = props.news;
-  console.log("articles:", articles);
+  // console.log("articles:", articles);
   return (
     <ul className="news-list">
       <h1 className="hodlr-news-header">HODLR News</h1>
